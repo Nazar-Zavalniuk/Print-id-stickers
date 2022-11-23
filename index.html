@@ -507,6 +507,7 @@
                     thirdNumberCell.textContent = inputName.value.slice(3);
                 }
                 imgCode.src = `https://barcode.tec-it.com/barcode.ashx?data=${sticker[inputName.value]}&code=Code25IL`;
+                inputName.focus();
             }
 
             else if(inputName.value.slice(0, 1) === 'b') {
@@ -515,6 +516,7 @@
                 secondNumberCell.textContent = inputName.value.slice(2, 3);
                 thirdNumberCell.textContent = inputName.value.slice(3);
                 imgCode.src = `https://barcode.tec-it.com/barcode.ashx?data=${sticker[inputName.value]}&code=Code25IL`;
+                inputName.focus();
             }
 
             else {
@@ -523,6 +525,7 @@
                 secondNumberCell.textContent = inputName.value.slice(2, 3);
                 thirdNumberCell.textContent = inputName.value.slice(3);
                 imgCode.src = `https://barcode.tec-it.com/barcode.ashx?data=${sticker[inputName.value]}&code=Code25IL`;
+                inputName.focus();
             }
 
             warningError.removeAttribute('class');
@@ -534,12 +537,17 @@
             warningError.setAttribute('class', 'warning-error');
             warningError.appendChild(warningHeading);
             warningError.appendChild(warningParagraph);
+            inputName.focus();
         }
 
-        inputName.focus();
     }
 
     inputSubmit.addEventListener('click', checkInput);
+    inputName.addEventListener('keydown', (event) => {
+        if (event.keyCode === 13) {
+            checkInput()
+        }
+    });
     buttonPrint.addEventListener('click', () => { window.print(); inputName.focus(); });
 </script>
 </body>
