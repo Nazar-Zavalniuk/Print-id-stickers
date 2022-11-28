@@ -625,36 +625,37 @@
 
     // create a function to validate user input and render the sticker or output an error
     function checkInput() {
-        if(inputName.value in sticker) {
-            if(inputName.value.slice(0, 1) === 'm') {
+        let inputValue = inputName.value.toLowerCase();
+        if(inputValue in sticker) {
+            if(inputValue.slice(0, 1) === 'm') {
                 nameCell.textContent = 'Осн';
-                firstNumberCell.textContent = inputName.value.slice(1, 2);
-                if(inputName.value.length === 5) {
-                    secondNumberCell.textContent = inputName.value.slice(2, 4);
-                    thirdNumberCell.textContent = inputName.value.slice(4);
+                firstNumberCell.textContent = inputValue.slice(1, 2);
+                if(inputValue.length === 5) {
+                    secondNumberCell.textContent = inputValue.slice(2, 4);
+                    thirdNumberCell.textContent = inputValue.slice(4);
                 } else {
-                    secondNumberCell.textContent = inputName.value.slice(2, 3);
-                    thirdNumberCell.textContent = inputName.value.slice(3);
+                    secondNumberCell.textContent = inputValue.slice(2, 3);
+                    thirdNumberCell.textContent = inputValue.slice(3);
                 }
-                imgCode.src = `https://barcode.tec-it.com/barcode.ashx?data=${sticker[inputName.value]}&code=Code25IL`;
+                imgCode.src = `https://barcode.tec-it.com/barcode.ashx?data=${sticker[inputValue]}&code=Code25IL`;
                 inputName.focus();
             }
 
-            else if(inputName.value.slice(0, 1) === 'b') {
+            else if(inputValue.slice(0, 1) === 'b') {
                 nameCell.textContent = 'Ящ.';
-                firstNumberCell.textContent = inputName.value.slice(1, 2);
-                secondNumberCell.textContent = inputName.value.slice(2, 3);
-                thirdNumberCell.textContent = inputName.value.slice(3);
-                imgCode.src = `https://barcode.tec-it.com/barcode.ashx?data=${sticker[inputName.value]}&code=Code25IL`;
+                firstNumberCell.textContent = inputValue.slice(1, 2);
+                secondNumberCell.textContent = inputValue.slice(2, 3);
+                thirdNumberCell.textContent = inputValue.slice(3);
+                imgCode.src = `https://barcode.tec-it.com/barcode.ashx?data=${sticker[inputValue]}&code=Code25IL`;
                 inputName.focus();
             }
 
             else {
                 nameCell.textContent = 'Зал';
-                firstNumberCell.textContent = inputName.value.slice(1, 2);
-                secondNumberCell.textContent = inputName.value.slice(2, 3);
-                thirdNumberCell.textContent = inputName.value.slice(3);
-                imgCode.src = `https://barcode.tec-it.com/barcode.ashx?data=${sticker[inputName.value]}&code=Code25IL`;
+                firstNumberCell.textContent = inputValue.slice(1, 2);
+                secondNumberCell.textContent = inputValue.slice(2, 3);
+                thirdNumberCell.textContent = inputValue.slice(3);
+                imgCode.src = `https://barcode.tec-it.com/barcode.ashx?data=${sticker[inputValue]}&code=Code25IL`;
                 inputName.focus();
             }
 
