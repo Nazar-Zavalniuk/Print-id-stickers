@@ -3,14 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Create sticker by Nazik</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
     <style>
         html {
-            font-family: 'Times New Roman', sans-serif;
+            font-family: 'Times New Roman', Arial, sans-serif;
         }
 
         body {
             margin: 0;
-            display: flow-root;
+            display: flex;
+            flex-flow: wrap;
         }
 
         * {
@@ -23,12 +25,10 @@
 
         .container-sticker {
             display: inline-block;
-            position: relative;
-            float: left;
             width: 10cm;
             height: 10cm;
             /*border: 1px solid black;*/
-            margin-right: 20px;
+            /*margin: 0 20px 20px 0;*/
         }
 
         .body-sticker {
@@ -95,12 +95,24 @@
             height: 2.5cm;
         }
 
+        .main-box {
+            flex: 3;
+        }
+
+        .main-container {
+            margin: 5px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(700px, 1fr));
+            gap: 10px;
+        }
+
         .rules {
-            float: left;
-            margin-top: 10px;
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            justify-content: space-between;
             padding: 10px;
             line-height: 1.4;
-            width: 682.46px;
             border-radius: 10px;
             background-color: rgba(0, 133, 242, .1);
             border-left: 4px solid #0085f2;
@@ -109,27 +121,28 @@
 
         .rules h1, .warning h1, .bad-primer h2, .good-primer h2 {
             text-align: center;
-            margin: 0 0 10px;
+            margin: 0;
         }
 
         .rules p, .warning p {
             margin: 0;
         }
 
-        .rules p:nth-child(odd) {
+        .rules p:nth-child(2n) {
             text-indent: 10px;
         }
 
-        .rules .bold-rule {
-            margin-top: 16px;
+       .bold-rule {
+            text-align: center;
             font-weight: bold;
             font-size: 20px;
         }
 
         .warning {
-            float: left;
-            margin-top: 10px;
-            margin-left: 80px;
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            justify-content: space-between;
             padding: 10px;
             line-height: 1.4;
             border-radius: 10px;
@@ -138,18 +151,31 @@
             box-shadow: 0 1px 2px rgba(43, 42, 51, .5), 1px -1px 2px rgba(43, 42, 51, .5);
         }
 
+        .box-warning {
+            height: 8.397rem;
+        }
+
+        .box-warning p:first-child {
+            text-align: center;
+        }
+
         p.bold-warning {
-            margin-top: 16px;
+            height: 56px;
             text-align: center;
             font-size: 25px;
             font-weight: bold;
         }
 
+        .rules, .warning {
+            min-height: 265px;
+        }
+
         .bad-primer {
-            float: right;
-            margin: 68px 20px 0 0;
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            justify-content: space-between;
             padding: 10px;
-            width: 739.35px;
             border-radius: 10px;
             background-color: rgba(242, 0, 0, 0.1);
             border-left: 4px solid #f20000;
@@ -157,14 +183,19 @@
         }
 
         .good-primer {
-            float: left;
-            margin-top: 10px;
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            justify-content: space-between;
             padding: 10px;
-            width: 682.46px;
             border-radius: 10px;
             background-color: rgba(52, 242, 0, 0.1);
             border-left: 4px solid #00f204;
             box-shadow: 0 1px 2px rgba(43, 42, 51, .5), 1px -1px 2px rgba(43, 42, 51, .5);
+        }
+
+        .bad-primer, .good-primer {
+            min-height: 125px;
         }
 
         .form {
@@ -197,7 +228,7 @@
         .warning-error {
             margin-top: 30px;
             padding: 10px;
-            width: 340.17px;
+            width: 368px;
             border-radius: 10px;
             background-color: rgba(242, 0, 0, 0.1);
             border-left: 4px solid #f20000;
@@ -205,10 +236,61 @@
         }
 
         address {
-            position: absolute;
-            right: 15px;
-            bottom: 15px;
+            margin-right: 21px;
+            display: flex;
+            flex-flow: row-reverse;
             text-align: center;
+        }
+        
+        @media screen and (max-width: 1900px) {
+            .main-container {
+                margin: 5px auto;
+                display: flex;
+                flex-flow: column;
+                max-width: 750px;
+            }
+            .rules, .warning, .good-primer, .bad-primer {
+                max-width: 750px;
+            }
+        }
+
+        @media screen and (max-width: 1180px) {
+            body {
+                display: block;
+            }
+        }
+
+        @media screen and (max-width: 535px) {
+            .main-box {
+                font-size: 14px;
+            }
+
+            .warning-error {
+                width: 100vw;
+            }
+
+            .rules, .warning, .good-primer, .bad-primer {
+                display: block;
+            }
+
+            .rules h1, .warning h1, .good-primer h2 , .bad-primer h2 {
+                font-size: 22px;
+                margin-bottom: 5px;
+            }
+
+            .rules, .warning {
+                min-height: initial;
+            }
+
+            .box-warning {
+                height: initial;
+            }
+
+            p.bold-rule, p.bold-warning {
+                font-size: 16px;
+                margin-top: 5px;
+                height: initial;
+            }
         }
     </style>
 </head>
@@ -244,54 +326,68 @@
 
 </div>
 
-<div class="rules">
-    <h1>Правила использования:</h1>
-    <p>Для получения стикера основной ячейки следует ввести букву "m" перед адресом самой ячейки.</p>
-    <p>Пример ввода для получения основной ячейки "Осн 2-1-1": m211;</p>
-    <p>Для получения стикера ячейки "Ящик" следует ввести букву "b" перед адресом самой ячейки.</p>
-    <p>Пример ввода для получения ячейки "Ящик" "Ящ. 1-1-1": b111;</p>
-    <p>Для получения стикера ячейки "Зал" следует ввести букву "h" перед адресом самой ячейки.</p>
-    <p>Пример ввода для получения ячейки "Зал" "Зал 1-1-2": h112;</p>
-    <p class="bold-rule">Примечание: при открытии окна печати, в настройках печати следует<br>
-        выбрать только первую странницу, а также установить значение маштаба на "166"!</p>
+<div class="main-box">
+    <div class="main-container">
+        <div class="rules">
+            <h1>Правила использования:</h1>
+            <div class="box-rules">
+                <p>Для получения стикера ячейки "Осн" следует ввести букву "m" перед адресом самой ячейки.</p>
+                <p>Пример ввода для получения ячейки "Осн" "Осн 2-1-1": m211;</p>
+                <p>Для получения стикера ячейки "Ящ." следует ввести букву "b" перед адресом самой ячейки.</p>
+                <p>Пример ввода для получения ячейки "Ящ." "Ящ. 1-1-1": b111;</p>
+                <p>Для получения стикера ячейки "Зал" следует ввести букву "h" перед адресом самой ячейки.</p>
+                <p>Пример ввода для получения ячейки "Зал" "Зал 1-1-2": h112;</p>
+            </div>
+            <p class="bold-rule">Примечание: при открытии окна печати, в настройках печати следует
+                выбрать только первую странницу, а также установить маштаба на "166"!</p>
 
+        </div>
+
+        <div class="warning">
+            <h1>Предупреждение!</h1>
+            <div class="box-warning">
+                <p>В данный момент осутствует информация по таким ячейкам:</p>
+                <ul>
+                    <li>Все ячейки основного стелажа №1 ("Осн 1"), такие как: "Осн 1-1-1", "Осн 1-1-2", "Осн 1-1-3" и т.д.</li>
+                    <li>Ячейка "Ящ. 1-1-17", "Ящ. 1-1-19", "Ящ. 1-1-20" и дальше по нарастающей...</li>
+                    <li>Ячейка "Зал 1-1-1"</li>
+                </ul>
+            </div>
+            <p class="bold-warning">Следовательно создать для них стикер невозможно!!!</p>
+        </div>
+
+        <div class="good-primer">
+            <h2>Пример хорошего ввода:</h2>
+            <div class="box-good-primer">
+                <ul>
+                    <li>Хотим получить стикер с адоресом "Осн 2-2-1", вводим: m221;</li>
+                    <li>Хотим получить стикер с адоресом "Ящ. 1-1-9", вводим: b119;</li>
+                    <li>Хотим получить стикер с адоресом "Зал 1-1-3", вводим: h113;</li>
+                    <li>Хотим получить стикер с адоресом "Осн 9-4-1", вводим: m941;</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="bad-primer">
+            <h2>Пример плохого ввода:</h2>
+            <div class="box-bad-primer">
+                <ul>
+                    <li>Хотим получить стикер с адоресом "Осн 2-1-1", вводим: 211;</li>
+                    <li>Хотим получить стикер с адоресом "Осн 2-1-1", вводим: 2-1-1;</li>
+                    <li>Хотим получить стикер с адоресом "Ящ. 1-1-1", вводим: 111;</li>
+                    <li>Хотим получить стикер с адоресом "Ящ. 1-1-1", вводим: b1-1-1;</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <address>
+        <p>
+            Связь с автором:<br>
+            Email: <b>nazarzaval99@gmail.com</b>
+        </p>
+    </address>
 </div>
-
-<div class="warning">
-    <h1>Предупреждение!</h1>
-    <p>В данный момент осутствует информация по таким ячейкам:</p>
-        <ul>
-            <li>Все ячейки основного стелажа №1 ("Осн 1"), такие как: "Осн 1-1-1", "Осн 1-1-2", "Осн 1-1-3" и т.д.</li>
-            <li>Ячейка "Ящ. 1-1-17", "Ящ. 1-1-19", "Ящ. 1-1-20" и дальше по нарастающей...</li>
-            <li>Ячейка "Зал 1-1-1"</li>
-        </ul>
-    <p class="bold-warning">Следовательно создать для них стикер невозможно!!!</p>
-</div>
-
-<div class="bad-primer">
-    <h2>Пример плохого ввода:</h2>
-    <ul>
-        <li>Хотим получить стикер с адоресом "Осн 2-1-1", вводим: 211;</li>
-        <li>Хотим получить стикер с адоресом "Осн 2-1-1", вводим: 2-1-1;</li>
-        <li>Хотим получить стикер с адоресом "Ящ. 1-1-1", вводим: 111;</li>
-        <li>Хотим получить стикер с адоресом "Ящ. 1-1-1", вводим: m111;</li>
-    </ul>
-</div>
-
-<div class="good-primer">
-    <h2>Пример хорошего ввода:</h2>
-    <ul>
-        <li>Хотим получить стикер с адоресом "Осн 2-10-1", вводим: m2101;</li>
-        <li>Хотим получить стикер с адоресом "Ящ. 1-1-18", вводим: b1118;</li>
-    </ul>
-</div>
-
-<address>
-    <p>
-        Связь с автором:<br>
-        Email: <b>nazarzaval99@gmail.com</b>
-    </p>
-</address>
 
 <script>
     //  stringCellCodeNum2 - строка содержащая все штрихкода Основной ячейки "2" (один штрих код содержит 8 цифр);
