@@ -5,6 +5,9 @@
     <title>Create sticker by Nazik</title>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <style>
+
+        /* General styles */
+
         html {
             font-family: 'Times New Roman', Arial, sans-serif;
         }
@@ -23,12 +26,12 @@
             margin: 0;
         }
 
+        /* Sticker styles */
+
         .container-sticker {
             display: inline-block;
             width: 10cm;
             height: 10cm;
-            /*border: 1px solid black;*/
-            /*margin: 0 20px 20px 0;*/
         }
 
         .body-sticker {
@@ -39,15 +42,13 @@
             border: 1px solid black;
         }
 
+        /* First Section Styles */
+
         .first-section {
             display: flex;
             flex-flow: column;
             align-items: center;
             justify-content: center;
-        }
-
-        .second-section {
-            display: inline-block;
         }
 
         .first-section img {
@@ -62,6 +63,13 @@
             font-size: 35px;
         }
 
+        /* Second Section Styles */
+
+        .second-section {
+            display: inline-block;
+            line-height: 121px;
+        }
+
         .first-number-cell {
             font-family: Arial, sans-serif;
             font-size: 128px;
@@ -72,9 +80,7 @@
 
         }
 
-        .second-section {
-            line-height: 121px;
-        }
+        /* Third Section Styles */
 
         .third-section {
             display: flex;
@@ -95,108 +101,7 @@
             height: 2.5cm;
         }
 
-        .main-box {
-            flex: 3;
-        }
-
-        .main-container {
-            margin: 5px;
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(700px, 1fr));
-            gap: 10px;
-        }
-
-        .rules {
-            display: flex;
-            flex-flow: column;
-            align-items: center;
-            justify-content: space-between;
-            padding: 10px;
-            line-height: 1.4;
-            border-radius: 10px;
-            background-color: rgba(0, 133, 242, .1);
-            border-left: 4px solid #0085f2;
-            box-shadow: 0 1px 2px rgba(43, 42, 51, .5), 1px -1px 2px rgba(43, 42, 51, .5);
-        }
-
-        .rules h1, .warning h1, .bad-primer h2, .good-primer h2 {
-            text-align: center;
-            margin: 0;
-        }
-
-        .rules p, .warning p {
-            margin: 0;
-        }
-
-        .rules p:nth-child(2n) {
-            text-indent: 10px;
-        }
-
-       .bold-rule {
-            text-align: center;
-            font-weight: bold;
-            font-size: 20px;
-        }
-
-        .warning {
-            display: flex;
-            flex-flow: column;
-            align-items: center;
-            justify-content: space-between;
-            padding: 10px;
-            line-height: 1.4;
-            border-radius: 10px;
-            background-color: rgba(242, 0, 0, 0.1);
-            border-left: 4px solid #f20000;
-            box-shadow: 0 1px 2px rgba(43, 42, 51, .5), 1px -1px 2px rgba(43, 42, 51, .5);
-        }
-
-        .box-warning {
-            height: 8.397rem;
-        }
-
-        .box-warning p:first-child {
-            text-align: center;
-        }
-
-        p.bold-warning {
-            height: 56px;
-            text-align: center;
-            font-size: 25px;
-            font-weight: bold;
-        }
-
-        .rules, .warning {
-            min-height: 265px;
-        }
-
-        .bad-primer {
-            display: flex;
-            flex-flow: column;
-            align-items: center;
-            justify-content: space-between;
-            padding: 10px;
-            border-radius: 10px;
-            background-color: rgba(242, 0, 0, 0.1);
-            border-left: 4px solid #f20000;
-            box-shadow: 0 1px 2px rgba(43, 42, 51, .5), 1px -1px 2px rgba(43, 42, 51, .5);
-        }
-
-        .good-primer {
-            display: flex;
-            flex-flow: column;
-            align-items: center;
-            justify-content: space-between;
-            padding: 10px;
-            border-radius: 10px;
-            background-color: rgba(52, 242, 0, 0.1);
-            border-left: 4px solid #00f204;
-            box-shadow: 0 1px 2px rgba(43, 42, 51, .5), 1px -1px 2px rgba(43, 42, 51, .5);
-        }
-
-        .bad-primer, .good-primer {
-            min-height: 125px;
-        }
+        /* Form styles */
 
         .form {
             margin-left: 2px;
@@ -215,15 +120,7 @@
             margin-left: 125px;
         }
 
-        .warning-error p, .warning-error h2 {
-            text-align: center;
-            font-weight: bold;
-            margin: 0;
-        }
-
-        .warning-error h2 {
-            margin-bottom: 2px;
-        }
+        /* Error block styles */
 
         .warning-error {
             margin-top: 30px;
@@ -235,45 +132,172 @@
             box-shadow: 0 1px 2px rgba(43, 42, 51, .5), 1px -1px 2px rgba(43, 42, 51, .5);
         }
 
-        address {
+        .warning-error p, .warning-error h2 {
+            text-align: center;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .warning-error h2 {
+            margin-bottom: 2px;
+        }
+
+        /* Styles content */
+
+        .main-box {
+            flex: 3;
+        }
+
+        .main-container {
+            margin: 5px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(700px, 1fr));
+            gap: 10px;
+        }
+
+        /* Rule block styles */
+
+        .rules {
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            line-height: 1.4;
+            border-radius: 10px;
+            background-color: rgba(0, 133, 242, .1);
+            border-left: 4px solid #0085f2;
+            box-shadow: 0 1px 2px rgba(43, 42, 51, .5), 1px -1px 2px rgba(43, 42, 51, .5);
+        }
+
+        .rules p:nth-child(2n) {
+            text-indent: 10px;
+        }
+
+       .bold-rule {
+            text-align: center;
+            font-weight: bold;
+            font-size: 20px;
+       }
+
+       /* Warning block Styles */
+
+       .warning {
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            line-height: 1.4;
+            border-radius: 10px;
+            background-color: rgba(242, 0, 0, 0.1);
+            border-left: 4px solid #f20000;
+            box-shadow: 0 1px 2px rgba(43, 42, 51, .5), 1px -1px 2px rgba(43, 42, 51, .5);
+       }
+
+       .box-warning {
+            height: 8.397rem;
+       }
+
+       .box-warning p:first-child {
+            text-align: center;
+       }
+
+       p.bold-warning {
+            height: 56px;
+            text-align: center;
+            font-size: 25px;
+            font-weight: bold;
+       }
+
+       /* Overall styles rules and warning */
+
+       .rules, .warning {
+            min-height: 265px;
+       }
+
+       .rules p, .warning p {
+            margin: 0;
+       }
+
+       /* Good example */
+
+       .good-example {
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: rgba(52, 242, 0, 0.1);
+            border-left: 4px solid #00f204;
+            box-shadow: 0 1px 2px rgba(43, 42, 51, .5), 1px -1px 2px rgba(43, 42, 51, .5);
+       }
+
+        /* Bad example */
+
+       .bad-example {
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: rgba(242, 0, 0, 0.1);
+            border-left: 4px solid #f20000;
+            box-shadow: 0 1px 2px rgba(43, 42, 51, .5), 1px -1px 2px rgba(43, 42, 51, .5);
+       }
+
+        /* Overall styles good example and bad example */
+
+       .good-example, .bad-example {
+            min-height: 125px;
+       }
+
+        /* Overall styles: rules, warning, good example and bad example */
+
+       .rules h1, .warning h1, .good-example h2, .bad-example h2 {
+            text-align: center;
+            margin: 0;
+       }
+
+       address {
             margin-right: 21px;
             display: flex;
             flex-flow: row-reverse;
             text-align: center;
-        }
-        
-        @media screen and (max-width: 1900px) {
+       }
+
+       /* Media queries to adapt content styles */
+
+       @media screen and (max-width: 1900px) {
             .main-container {
                 margin: 5px auto;
                 display: flex;
                 flex-flow: column;
                 max-width: 750px;
             }
-            .rules, .warning, .good-primer, .bad-primer {
+            .rules, .warning, .good-example, .bad-example {
                 max-width: 750px;
             }
-        }
+       }
 
-        @media screen and (max-width: 1180px) {
+       @media screen and (max-width: 1180px) {
             body {
                 display: block;
             }
-        }
+       }
 
-        @media screen and (max-width: 535px) {
+       @media screen and (max-width: 535px) {
             .main-box {
                 font-size: 14px;
             }
 
-            .warning-error {
-                width: 100vw;
-            }
-
-            .rules, .warning, .good-primer, .bad-primer {
+            .rules, .warning, .good-example, .bad-example {
                 display: block;
             }
 
-            .rules h1, .warning h1, .good-primer h2 , .bad-primer h2 {
+            .rules h1, .warning h1, .good-example h2 , .bad-example h2 {
                 font-size: 22px;
                 margin-bottom: 5px;
             }
@@ -291,7 +315,14 @@
                 margin-top: 5px;
                 height: initial;
             }
-        }
+       }
+
+       @media screen and (max-width: 370px) {
+            .warning-error {
+                width: 100vw;
+            }
+       }
+
     </style>
 </head>
 <body>
@@ -356,9 +387,9 @@
             <p class="bold-warning">Следовательно создать для них стикер невозможно!!!</p>
         </div>
 
-        <div class="good-primer">
+        <div class="good-example">
             <h2>Пример хорошего ввода:</h2>
-            <div class="box-good-primer">
+            <div class="box-good-example">
                 <ul>
                     <li>Хотим получить стикер с адоресом "Осн 2-2-1", вводим: m221;</li>
                     <li>Хотим получить стикер с адоресом "Ящ. 1-1-9", вводим: b119;</li>
@@ -368,9 +399,9 @@
             </div>
         </div>
 
-        <div class="bad-primer">
+        <div class="bad-example">
             <h2>Пример плохого ввода:</h2>
-            <div class="box-bad-primer">
+            <div class="box-bad-example">
                 <ul>
                     <li>Хотим получить стикер с адоресом "Осн 2-1-1", вводим: 211;</li>
                     <li>Хотим получить стикер с адоресом "Осн 2-1-1", вводим: 2-1-1;</li>
@@ -390,14 +421,15 @@
 </div>
 
 <script>
-    //  stringCellCodeNum2 - строка содержащая все штрихкода Основной ячейки "2" (один штрих код содержит 8 цифр);
+
+    //  stringCellCodeNum2 - string containing all barcodes of the Main cell "2" (one barcode contains 8 numbers);
     const stringCellCodeNum2 = '30061965300620163006206130062115300621603006221430062269300623133006236830062412300624673006197230062023300620783006212230062177300622213006227630062320300623753006242930062474300619893006203030062085300621393006218430062238300622833006233730062382300624363006248130061996300620473006209230062146300621913006224530062290300623443006239930062443300624983006200930062054300621083006215330062207300622523006230630062351300624053006245030062504';
     const cellCodeNum2 = [];
 
     let startIndex = 0;
     let endIndex = 8;
 
-    // данный цкл проходит по строке собирая штрихкода Основной ячейки "2" в массив cellCodeNum2
+    // this cycle goes through the string collecting the barcode of the Main cell "2" into an array cellCodeNum2
     for (let i = 0; (stringCellCodeNum2.slice(startIndex, endIndex)) !== ''; i++) {
         cellCodeNum2.push(stringCellCodeNum2.slice(startIndex, endIndex));
         startIndex += 8;
@@ -407,7 +439,7 @@
     const nameCellNum2 = [];
     const firstNameCell = 'm2';
 
-    // данный цыкл генеирует все имена Основной ячейки "2" и записывает их в массив nameCellNum2
+    // this cycle generates all the names of the Main cell "2" and writes them to an array nameCellNum2
     for (let i = 1; i <= 5; i++) {
         let thirdNameCell = String(i);
         for (let j = 1; j <= 11; j++) {
@@ -417,23 +449,24 @@
         }
     }
 
-    const sticker = {};         // обект содержащий все имена ячеек с их штрихкодами
+    const sticker = {};         // object in which all cell names with their barcodes will be written
 
-    // данный цыкл прохолится по массиву cellCodeNum2 содержащемму все штрих кода Основной ячейки "2", присваевает
-    // им имена и записывет в объект имя ячейки с ее штрихкодом
+    // this cycle iterates through the array cellCodeNum2 containing all the barcodes of the Main cell "2",
+    // assigns names to them and writes to the object the name of the cell with its barcode
     for (let i = 0; i < cellCodeNum2.length; i++) {
         sticker[nameCellNum2[i]] = cellCodeNum2[i];
     }
 
-    //  stringCellCodeNum345678 - строка содержащая все штрихкода Основной ячейки "4, 5, 6, 7, 8"
-    //  (один штрих код содержит 8 цифр);
+    //  stringCellCodeNum345678 - string containing all the barcodes of the Main cell "4, 5, 6, 7, 8"
+    //  (one barcode contains 8 numbers);
     const stringCellCodeNum45678 = '300626653006271930062764300626723006272630062771300626893006273330062788300626963006274030062795300627023006275730062801300628183006286330062917300628253006287030062924300628323006288730062931300628493006289430062948300628563006290030062955300629623006301330063068300629793006302030063075300629863006303730063082300629933006304430063099300630063006305130063105300631123006316730063211300631293006317430063228300631363006318130063235300631433006319830063242300631503006320430063259300632663006331030063365300632733006332730063372300632803006333430063389300632973006334130063396300633033006335830063402';
     const cellCodeNum45678 = [];
 
     startIndex = 0;
     endIndex = 8;
 
-    // данный цкл проходит по строке собирая штрихкода Основной ячейки "4, 5, 6, 7, 8" в массив cellCodeNum45678
+    // this cycle goes through the string collecting the barcode of the Main cell "4, 5, 6, 7, 8"
+    // into an array cellCodeNum45678
     for (let i = 0; (stringCellCodeNum45678.slice(startIndex, endIndex)) !== ''; i++) {
         cellCodeNum45678.push(stringCellCodeNum45678.slice(startIndex, endIndex));
         startIndex += 8;
@@ -442,7 +475,7 @@
 
     const nameCellNum45678 = [];
 
-    // данный цыкл генеирует все имена Основной ячейки "4, 5, 6, 7, 8" и записывает их в массив nameCellNum2
+    // this cycle generates all the names of the Main cell "4, 5, 6, 7, 8" and writes them to an array nameCellNum2
     for (let i = 4; i <= 8; i++) {
         let firstNameCell ='m' + String(i);
         for (let j = 1; j <= 5; j++) {
@@ -455,20 +488,20 @@
         }
     }
 
-    // данный цыкл прохолится по массиву nameCellNum45678 содержащемму все штрих кода Основной ячейки "4, 5, 6, 7, 8",
-    // присваевает им имена и записывет в объект имя ячейки с ее штрихкодом
+    // this cycle iterates through the array nameCellNum45678 containing all the barcodes of the Main cell "4, 5, 6, 7, 8",
+    // assigns names to them and writes to the object the name of the cell with its barcode
     for (let i = 0; i < nameCellNum45678.length; i++) {
         sticker[nameCellNum45678[i]] = cellCodeNum45678[i];
     }
 
-    //  stringCellCodeNum9 - строка содержащая все штрихкода Основной ячейки "9" (один штрих код содержит 8 цифр);
+    //  stringCellCodeNum9 - string containing all the barcodes of the Main cell "9" (one barcode contains 8 numbers);
     const stringCellCodeNum9 = '3006341930063464300635183006356330063426300634713006352530063570300634333006348830063532300635873006344030063495300635493006359430063457300635013006355630063600';
     const cellCodeNum9 = [];
 
     startIndex = 0;
     endIndex = 8;
 
-    // данный цкл проходит по строке собирая штрихкода Основной ячейки "9" в массив cellCodeNum9
+    // this cycle goes through the string collecting the barcode of the Main cell "9" into an array cellCodeNum9
     for (let i = 0; (stringCellCodeNum9.slice(startIndex, endIndex)) !== ''; i++) {
         cellCodeNum9.push(stringCellCodeNum9.slice(startIndex, endIndex));
         startIndex += 8;
@@ -478,7 +511,7 @@
     const nameCellNum9 = [];
     const firstNameCell9 = 'm9';
 
-    // данный цыкл генеирует все имена Основной ячейки "9" и записывает их в массив nameCellNum9
+    // this cycle generates all the names of the Main cell "9" and writes them to an array nameCellNum9
     for (let i = 1; i <= 5; i++) {
         let thirdNameCell = String(i);
         for (let j = 1; j <= 4; j++) {
@@ -488,20 +521,20 @@
         }
     }
 
-    // данный цыкл прохолится по массиву cellCodeNum9 содержащемму все штрих кода Основной ячейки "9", присваевает
-    // им имена и записывет в объект имя ячейки с ее штрихкодом
+    // this cycle goes through the array cellCodeNum9 containing all the barcodes of the Main cell "9",
+    // assigns names to them and writes to the object the name of the cell with its barcode
     for (let i = 0; i < cellCodeNum9.length; i++) {
         sticker[nameCellNum9[i]] = cellCodeNum9[i];
     }
 
-    // stringCellCodeBox - строка содержащая все штрихкода ячейки "Ящик" (один штрих код содержит 8 цифр);
+    // stringCellCodeBox - string containing all the barcodes of the "Box" cell (one barcode contains 8 numbers);
     const stringCellCodeBox = '30068216300682233006823030068247300682543006826130068278300682853006829230068308300683153006832230068339300683463006835330068360';
     const cellCodeBox = [];
 
     startIndex = 0;
     endIndex = 8;
 
-    // данный цкл проходит по строке собирая штрихкода ячейки "Ящик" в массив cellCodeNumBox
+    // this cycle goes through the line collecting the barcode of the "Box" cell into an array cellCodeNumBox
     for (let i = 0; (stringCellCodeBox.slice(startIndex, endIndex)) !== ''; i++) {
         cellCodeBox.push(stringCellCodeBox.slice(startIndex, endIndex));
         startIndex += 8;
@@ -511,26 +544,26 @@
     const nameCellBox = [];
     const firstNameCellBox = 'b11';
 
-    // данный цыкл генеирует все имена ячейки "Ящик" и записывает их в массив nameCellBox
+    // this cycle generates all cell names "Box" and writes them to an array nameCellBox
     for (let i = 1; i <= 16; i++) {
         let fullNameCell = firstNameCellBox + String(i);
         nameCellBox.push(fullNameCell);
     }
 
-    // данный цыкл прохолится по массиву cellCodeBox содержащемму все штрих кода ячейки "Ящик", присваевает
-    // им имена и записывет в объект имя ячейки с ее штрихкодом
+    // this cycle iterates through the array cellCodeBox containing all the barcode of the cell "Box",
+    // assigns names to them and writes to the object the name of the cell with its barcode
     for (let i = 0; i < cellCodeBox.length; i++) {
         sticker[nameCellBox[i]] = cellCodeBox[i];
     }
 
-    //  stringCellCodeNum2 - строка содержащая все штрихкода Основной ячейки "3" (один штрих код содержит 8 цифр);
+    //  stringCellCodeNum2 - string containing all the barcodes of the Main cell "3" (one barcode contains 8 numbers);
     const stringCellCodeNum3 = '300625113006256630062610300625353006258030062634300625423006259730062641300625593006260330062658';
     const cellCodeNum3 = [];
 
     startIndex = 0;
     endIndex = 8;
 
-    // данный цкл проходит по строке собирая штрихкода Основной ячейки "3" в массив cellCodeNum2
+    // this cycle goes through the line collecting the barcode of the Main cell "3" into an array cellCodeNum2
     for (let i = 0; (stringCellCodeNum3.slice(startIndex, endIndex)) !== ''; i++) {
         cellCodeNum3.push(stringCellCodeNum3.slice(startIndex, endIndex));
         startIndex += 8;
@@ -540,7 +573,8 @@
     const nameCellNum3 = [];
     const firstNameCell3 = 'm3';
 
-    // данный цыкл генеирует все(кроме второй полки) имена Основной ячейки "3" и записывает их в массив nameCellNum3
+    // this cycle generates all (except for the second shelf) the names of the main cell "3" and writes them
+    // to the array nameCellNum3
     for (let i = 1; i <= 5; i++) {
         if (i === 2) {
             i += 1;
@@ -553,13 +587,13 @@
         }
     }
 
-    // данный цыкл прохолится по массиву cellCodeNum3 содержащемму все штрих кода Основной ячейки "3", присваевает
-    // им имена и записывет в объект имя ячейки с ее штрихкодом
+    // this cycle iterates through the array cellCodeNum3 containing all the barcode of the Main cell "3",
+    // assigns names to them and writes to the object the name of the cell with its barcode
     for (let i = 0; i < cellCodeNum3.length; i++) {
         sticker[nameCellNum3[i]] = cellCodeNum3[i];
     }
 
-    // добавляем оставшиесе одиночные ячейки ("сиротки)")
+    // add remaining single cells
     sticker['m332'] = '30062627';
     sticker['b1118'] = '30068384';
     sticker['m000'] = '30057579';
@@ -567,29 +601,29 @@
     sticker['h113'] = '30068452';
     sticker['h114'] = '30068469';
 
-    // создаем константы для кнопок
+    // create button constants
     const inputName = document.querySelector('.input-name')
     const inputSubmit = document.querySelector('.submitName');
     const buttonPrint = document.querySelector('.print');
 
-    // константы для управления блоком вывода ошибки
+    // constants to control the error output block
     const warningError = document.querySelector('#warning-error');
     const warningHeading = document.createElement('h2');
     warningHeading.textContent = 'Ошибка!';
     const warningParagraph = document.createElement('p');
     warningParagraph.textContent = 'Введено некоректное имя ячейки или же ячейка отсутствует в базе, попробуйте еще раз.';
 
-    // делаем фокусировку на полле ввода данных для удобства и быстродействия
+    // we focus on the data entry field for convenience and speed
     inputName.focus();
 
-    // создаем константы для управления рендерингом содержимого стикера
+    // create constants to control the rendering of sticker content
     const nameCell = document.querySelector('.name-cell');
     const firstNumberCell = document.querySelector('.first-number-cell');
     const secondNumberCell = document.querySelector('.second-number-cell');
     const thirdNumberCell = document.querySelector('.third-number-cell');
     const imgCode = document.querySelector('.img-code');
 
-    // создаем функцию для проверки введенных данных пользователем и рендеринга стикера или же вывода ошибки
+    // create a function to validate user input and render the sticker or output an error
     function checkInput() {
         if(inputName.value in sticker) {
             if(inputName.value.slice(0, 1) === 'm') {
@@ -645,6 +679,7 @@
         }
     });
     buttonPrint.addEventListener('click', () => { window.print(); inputName.focus(); });
+
 </script>
 </body>
 </html>
