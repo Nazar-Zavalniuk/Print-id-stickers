@@ -1,0 +1,317 @@
+/* General styles */
+
+html {
+    font-family: 'Times New Roman', Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    flex-flow: wrap;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+* ul, li{
+    margin: 0;
+}
+
+/* Sticker styles */
+
+.container-sticker {
+    display: inline-block;
+    width: 10cm;
+    height: 10cm;
+}
+
+.body-sticker {
+    display: flex;
+    padding: 10px;
+    width: 9cm;
+    height: 4cm;
+    border: 1px solid black;
+}
+
+/* First Section Styles */
+
+.first-section {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.first-section img {
+    width: 90px;
+    height: 89px;
+}
+
+.name-cell {
+    display: flex;
+    justify-content: center;
+    font-weight: 500;
+    font-size: 35px;
+}
+
+/* Second Section Styles */
+
+.second-section {
+    display: inline-block;
+    line-height: 121px;
+}
+
+.first-number-cell {
+    font-family: Arial, sans-serif;
+    font-size: 128px;
+    font-weight: bold;
+    display: flex;
+    border: 4px solid;
+    padding: 0 10px;
+
+}
+
+/* Third Section Styles */
+
+.third-section {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 15px;
+}
+
+.number-section {
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: 56px;
+    height: 50%;
+}
+
+.code-section {
+    width: 3cm;
+    height: 50%;
+}
+
+/* Form styles */
+
+.form {
+    margin-left: 2px;
+}
+
+.input-name {
+    margin: 10px 0 0 0;
+    width: 180px;
+}
+
+.print, .submitName {
+    margin-top: 10px;
+}
+
+.submitName {
+    margin-left: 125px;
+}
+
+/* Error block styles */
+
+.warning-error {
+    margin-top: 30px;
+    padding: 10px;
+    width: 368px;
+    border-radius: 10px;
+    background-color: rgba(242, 0, 0, 0.1);
+    border-left: 4px solid #f20000;
+    box-shadow: 0 1px 2px rgba(43, 42, 51, .5), 1px -1px 2px rgba(43, 42, 51, .5);
+}
+
+.warning-error p, .warning-error h2 {
+    text-align: center;
+    font-weight: bold;
+    margin: 0;
+}
+
+.warning-error h2 {
+    margin-bottom: 2px;
+}
+
+/* Styles content */
+
+.main-box {
+    flex: 3;
+}
+
+.main-container {
+    margin: 5px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(700px, 1fr));
+    gap: 10px;
+}
+
+/* Rule block styles */
+
+.rules {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    line-height: 1.4;
+    border-radius: 10px;
+    background-color: rgba(0, 133, 242, .1);
+    border-left: 4px solid #0085f2;
+    box-shadow: 0 1px 2px rgba(43, 42, 51, .5), 1px -1px 2px rgba(43, 42, 51, .5);
+}
+
+.rules p:nth-child(2n) {
+    text-indent: 10px;
+}
+
+.bold-rule {
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* Warning block Styles */
+
+.warning {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    line-height: 1.4;
+    border-radius: 10px;
+    background-color: rgba(242, 0, 0, 0.1);
+    border-left: 4px solid #f20000;
+    box-shadow: 0 1px 2px rgba(43, 42, 51, .5), 1px -1px 2px rgba(43, 42, 51, .5);
+}
+
+.box-warning {
+    height: 8.397rem;
+}
+
+.box-warning p:first-child {
+    text-align: center;
+}
+
+p.bold-warning {
+    height: 56px;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+/* Overall styles rules and warning */
+
+.rules, .warning {
+    min-height: 265px;
+}
+
+.rules p, .warning p {
+    margin: 0;
+}
+
+/* Good example */
+
+.good-example {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgba(52, 242, 0, 0.1);
+    border-left: 4px solid #00f204;
+    box-shadow: 0 1px 2px rgba(43, 42, 51, .5), 1px -1px 2px rgba(43, 42, 51, .5);
+}
+
+/* Bad example */
+
+.bad-example {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgba(242, 0, 0, 0.1);
+    border-left: 4px solid #f20000;
+    box-shadow: 0 1px 2px rgba(43, 42, 51, .5), 1px -1px 2px rgba(43, 42, 51, .5);
+}
+
+/* Overall styles good example and bad example */
+
+.good-example, .bad-example {
+    min-height: 125px;
+}
+
+/* Overall styles: rules, warning, good example and bad example */
+
+.rules h1, .warning h1, .good-example h2, .bad-example h2 {
+    text-align: center;
+    margin: 0;
+}
+
+address {
+    margin-right: 21px;
+    display: flex;
+    flex-flow: row-reverse;
+    text-align: center;
+}
+
+/* Media queries to adapt content styles */
+
+@media screen and (max-width: 1900px) {
+    .main-container {
+        margin: 5px auto;
+        display: flex;
+        flex-flow: column;
+        max-width: 750px;
+    }
+    .rules, .warning, .good-example, .bad-example {
+        max-width: 750px;
+    }
+}
+
+@media screen and (max-width: 1180px) {
+    body {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 535px) {
+    .main-box {
+        font-size: 14px;
+    }
+
+    .rules, .warning, .good-example, .bad-example {
+        display: block;
+    }
+
+    .rules h1, .warning h1, .good-example h2 , .bad-example h2 {
+        font-size: 22px;
+        margin-bottom: 5px;
+    }
+
+    .rules, .warning {
+        min-height: initial;
+    }
+
+    .box-warning {
+        height: initial;
+    }
+
+    p.bold-rule, p.bold-warning {
+        font-size: 16px;
+        margin-top: 5px;
+        height: initial;
+    }
+}
+
+@media screen and (max-width: 370px) {
+    .warning-error {
+        width: 100vw;
+    }
+}
