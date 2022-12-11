@@ -93,12 +93,13 @@
         .number-section {
             font-family: Arial, sans-serif;
             font-weight: bold;
-            font-size: 42px;
+            font-size: 56px;
+            height: 50%;
         }
 
         .code-section {
             width: 3cm;
-            height: 2.5cm;
+            height: 50%;
         }
 
         /* Form styles */
@@ -341,7 +342,7 @@
                 <span class="second-number-cell">0</span>-<span class="third-number-cell">0</span>
             </div>
             <div class="code-section">
-                <img class="img-code" src="https://barcode.tec-it.com/barcode.ashx?data=30057579&code=Code25IL" width="113.38" height="75.60">
+                <img class="img-code" src="https://barcode.tec-it.com/barcode.ashx?data=30057579&code=Code25IL" width="113.38" height="64.58">
             </div>
         </div>
     </div>
@@ -665,10 +666,21 @@
         }
 
         else {
-            warningError.setAttribute('class', 'warning-error');
-            warningError.appendChild(warningHeading);
-            warningError.appendChild(warningParagraph);
-            inputName.focus();
+            function slowWarning() {
+                warningError.setAttribute('class', 'warning-error');
+                warningError.appendChild(warningHeading);
+                warningError.appendChild(warningParagraph);
+                inputName.focus();
+            }
+
+            if (warningError.getAttribute('class') === 'warning-error') {
+                warningError.removeAttribute('class');
+                warningError.removeChild(warningHeading);
+                warningError.removeChild(warningParagraph);
+                window.setTimeout(slowWarning, 150);
+            } else {
+                window.setTimeout(slowWarning, 150);
+            }
         }
 
     }
