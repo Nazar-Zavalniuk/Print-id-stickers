@@ -1,37 +1,47 @@
 /* General styles */
 
 html {
-    font-family: 'Times New Roman', Arial, sans-serif;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 body {
     margin: 0;
-    display: flex;
-    flex-flow: wrap;
 }
 
 * {
     box-sizing: border-box;
 }
 
-* ul, li{
+* h1, h2, p, ul, li {
     margin: 0;
+    padding: 0;
+}
+
+.page-container {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    max-width: 767px;
+    margin: 0 auto;
+    padding: 0.625rem;
 }
 
 /* Sticker styles */
 
 .container-sticker {
-    display: inline-block;
-    width: 10cm;
-    height: 10cm;
+    /*border: 1px solid black;*/
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    margin-bottom: 0.625rem;
 }
 
 .body-sticker {
     display: flex;
-    padding: 10px;
-    width: 9cm;
-    height: 4cm;
-    border: 1px solid black;
+    justify-content: space-between;
+    height: 7.125rem;
+    padding: 0.625rem;
+    border: 0.0625rem solid black;
 }
 
 /* First Section Styles */
@@ -40,36 +50,39 @@ body {
     display: flex;
     flex-flow: column;
     align-items: center;
-    justify-content: center;
+    width: 30.33%;
 }
 
 .first-section img {
-    width: 90px;
-    height: 89px;
+    width: 100%;
+    height: 70%;
 }
 
 .name-cell {
     display: flex;
-    justify-content: center;
-    font-weight: 500;
-    font-size: 35px;
+    flex-flow: column;
+    justify-content: flex-end;
+    font-weight: bold;
+    font-size: 1.5rem;
+    line-height: .8;
+    height: 30%;
 }
 
 /* Second Section Styles */
 
 .second-section {
-    display: inline-block;
-    line-height: 121px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    width: 33.33%;
+    border: 0.25rem solid black;
 }
 
-.first-number-cell {
-    font-family: Arial, sans-serif;
-    font-size: 128px;
-    font-weight: bold;
-    display: flex;
-    border: 4px solid;
-    padding: 0 10px;
 
+.first-number-cell {
+    font-weight: bold;
+    font-size: 5rem;
 }
 
 /* Third Section Styles */
@@ -77,241 +90,229 @@ body {
 .third-section {
     display: flex;
     flex-flow: column;
-    align-items: center;
-    justify-content: center;
-    margin-left: 15px;
+    width: 30.33%;
 }
 
 .number-section {
-    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-weight: bold;
-    font-size: 56px;
+    font-size: 2.7rem;
+    line-height: .8;
+    height: 50%;
+}
+.code-section {
+    display: flex;
     height: 50%;
 }
 
-.code-section {
-    width: 3cm;
-    height: 50%;
+.img-code {
+    width: 100%;
 }
 
 /* Form styles */
 
-.form {
-    margin-left: 2px;
+.data-processing-container {
+    display: flex;
+    flex-flow: column;
+    min-width: 100%;
+}
+
+.form-input-cell {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.625rem auto;
+    min-width: 100%;
+}
+
+label[for='input-name'] {
+    font-size: 0.875rem;
 }
 
 .input-name {
-    margin: 10px 0 0 0;
-    width: 180px;
+    width: 62%;
 }
 
-.print, .submitName {
-    margin-top: 10px;
+.buttons-render-sticker-or-pdf {
+    display: flex;
+    justify-content: space-between;
 }
 
-.submitName {
-    margin-left: 125px;
+/* General styles content */
+
+.text-content-container {
+    display: flex;
+    flex-flow: column;
+    gap: 0.625rem;
+    align-items: center;
+    font-size: 0.75rem;
+    line-height: 1.4;
+    text-align: center;
 }
 
-/* Error block styles */
+.text-content-container h1 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.flex-grid {
+    display: flex;
+    flex-flow: wrap;
+    gap: 0.625rem;
+    justify-content: center;
+}
+
+.warning-error, .box-rules, .box-warning, .box-good-example, .box-bad-example {
+    padding: 0.625rem;
+    border: 1px solid black;
+}
+
+.box-rules, .box-warning, .box-good-example, .box-bad-example {
+    min-width: 100%;
+}
+
+/* Content blocks styles */
 
 .warning-error {
-    margin-top: 30px;
-    padding: 10px;
-    width: 368px;
-    border-radius: 10px;
-    background-color: rgba(242, 0, 0, 0.1);
-    border-left: 4px solid #f20000;
-    box-shadow: 0 1px 2px rgba(43, 42, 51, .5), 1px -1px 2px rgba(43, 42, 51, .5);
+    box-shadow: 3px 3px 3px rgba(43, 42, 51, .5);
 }
 
-.warning-error p, .warning-error h2 {
-    text-align: center;
-    font-weight: bold;
-    margin: 0;
-}
-
-.warning-error h2 {
-    margin-bottom: 2px;
-}
-
-/* Styles content */
-
-.main-box {
-    flex: 3;
-}
-
-.main-container {
-    margin: 5px;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(700px, 1fr));
-    gap: 10px;
-}
-
-/* Rule block styles */
-
-.rules {
+.box-rules, .box-warning, .box-good-example, .box-bad-example {
     display: flex;
     flex-flow: column;
     align-items: center;
-    justify-content: space-between;
-    padding: 10px;
-    line-height: 1.4;
-    border-radius: 10px;
-    background-color: rgba(0, 133, 242, .1);
-    border-left: 4px solid #0085f2;
-    box-shadow: 0 1px 2px rgba(43, 42, 51, .5), 1px -1px 2px rgba(43, 42, 51, .5);
+    box-shadow: 3px 3px 3px rgba(43, 42, 51, .5);
 }
 
-.rules p:nth-child(2n) {
-    text-indent: 10px;
+.rules p, .note, .box-warning p, .box-warning li, .good-example li, .bad-example li {
+    padding: 0.25rem;
 }
 
-.bold-rule {
+.warning-error, .rules, .warning, .note, .emphasis-warning, .good-example, .bad-example {
+    text-shadow: 0 0 black;
+}
+
+.warning p:first-child {
+    font-weight: 500;
     text-align: center;
-    font-weight: bold;
-    font-size: 20px;
 }
-
-/* Warning block Styles */
 
 .warning {
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px;
-    line-height: 1.4;
-    border-radius: 10px;
-    background-color: rgba(242, 0, 0, 0.1);
-    border-left: 4px solid #f20000;
-    box-shadow: 0 1px 2px rgba(43, 42, 51, .5), 1px -1px 2px rgba(43, 42, 51, .5);
+    text-align: justify;
 }
 
-.box-warning {
-    height: 8.397rem;
+.warning ul, .good-example ul, .bad-example ul {
+    list-style-position: inside;
 }
 
-.box-warning p:first-child {
-    text-align: center;
+.warning ul {
+    padding: 0 0.1875rem;
+    word-spacing: 0.25rem;
 }
 
-p.bold-warning {
-    height: 56px;
-    text-align: center;
-    font-size: 25px;
-    font-weight: bold;
+.good-example ul, .bad-example ul {
+    padding: 0.3125rem 0.625rem;
+    word-spacing: 0.1875rem;
 }
 
-/* Overall styles rules and warning */
-
-.rules, .warning {
-    min-height: 265px;
+.note, .emphasis-warning {
+    font-weight: 500;
 }
 
-.rules p, .warning p {
-    margin: 0;
+.emphasis-warning {
+    font-size: 0.875rem;
 }
 
-/* Good example */
-
-.good-example {
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px;
-    border-radius: 10px;
-    background-color: rgba(52, 242, 0, 0.1);
-    border-left: 4px solid #00f204;
-    box-shadow: 0 1px 2px rgba(43, 42, 51, .5), 1px -1px 2px rgba(43, 42, 51, .5);
+.box-rules {
+    background-color: rgb(33 150 243);
 }
 
-/* Bad example */
-
-.bad-example {
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px;
-    border-radius: 10px;
-    background-color: rgba(242, 0, 0, 0.1);
-    border-left: 4px solid #f20000;
-    box-shadow: 0 1px 2px rgba(43, 42, 51, .5), 1px -1px 2px rgba(43, 42, 51, .5);
+.rules p:nth-child(odd) {
+    background-color: rgb(63 81 181 / 50%);
 }
 
-/* Overall styles good example and bad example */
-
-.good-example, .bad-example {
-    min-height: 125px;
+.warning-error, .box-warning, .box-bad-example{
+    background-color: rgb(255 0 87);
 }
 
-/* Overall styles: rules, warning, good example and bad example */
-
-.rules h1, .warning h1, .good-example h2, .bad-example h2 {
-    text-align: center;
-    margin: 0;
-}
-
-address {
-    margin-right: 21px;
-    display: flex;
-    flex-flow: row-reverse;
-    text-align: center;
+.box-good-example {
+    background-color: rgb(50 205 50);
 }
 
 /* Media queries to adapt content styles */
 
-@media screen and (max-width: 1900px) {
-    .main-container {
-        margin: 5px auto;
-        display: flex;
-        flex-flow: column;
-        max-width: 750px;
+@media (max-width: 320px) {
+
+    .page-container {
+        min-width: 320px;
     }
-    .rules, .warning, .good-example, .bad-example {
-        max-width: 750px;
-    }
+
 }
 
-@media screen and (max-width: 1180px) {
-    body {
-        display: block;
+@media (width: 360px) {
+
+    .rules p , .note {
+        padding: 0.25rem 0;
     }
+
+    .good-example ul, .bad-example ul {
+        padding: 0.3125rem 0;
+    }
+
 }
 
-@media screen and (max-width: 535px) {
-    .main-box {
-        font-size: 14px;
+@media (min-width: 422px) {
+
+    .good-example ul, .bad-example ul {
+        word-spacing: 0.125rem;
     }
 
-    .rules, .warning, .good-example, .bad-example {
-        display: block;
-    }
-
-    .rules h1, .warning h1, .good-example h2 , .bad-example h2 {
-        font-size: 22px;
-        margin-bottom: 5px;
-    }
-
-    .rules, .warning {
-        min-height: initial;
-    }
-
-    .box-warning {
-        height: initial;
-    }
-
-    p.bold-rule, p.bold-warning {
-        font-size: 16px;
-        margin-top: 5px;
-        height: initial;
-    }
 }
 
-@media screen and (max-width: 370px) {
-    .warning-error {
-        width: 100vw;
+@media (min-width: 430px) {
+
+    .good-example ul, .bad-example ul {
+        word-spacing: 0.1875rem;
     }
+
+}
+
+@media (min-width: 440px) {
+
+    .good-example ul, .bad-example ul {
+        word-spacing: 0.25rem;
+    }
+
+}
+
+@media (min-width: 444px) {
+
+    .good-example ul, .bad-example ul {
+        word-spacing: 0;
+        text-align: justify;
+    }
+
+}
+
+@media (min-width: 902px) {
+
+    .page-container {
+        max-width: 1400px;
+    }
+
+    .text-content-container h1, .text-content-container h2 {
+        min-width: 100%;
+    }
+
+    .box-rules, .box-warning, .box-good-example, .box-bad-example {
+        min-width: 49%;
+        max-width: 49%;
+    }
+
+    .warning {
+        min-height: 67%;
+    }
+
 }
