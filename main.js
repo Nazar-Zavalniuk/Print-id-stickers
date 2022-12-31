@@ -156,7 +156,7 @@ userInputEvents['inputName'].focus();
 render['warningHeading'].textContent = render['textHeading'];
 render['warningParagraph'].textContent = render['textParagraph'];
 
-function checkInput() {
+function renderStickerOrWarningError() {
     let inputValue = userInputEvents['inputName'].value.toLowerCase();
 
     if (inputValue in sticker) {
@@ -177,11 +177,9 @@ function checkInput() {
 
         let cellNameLength = inputValue.length;
 
-        function checkLengthNameCell() {
-            if (cellNameLength === 5) {
+        function changeSecondAndThirdNumberCell() {
                 secondNumberCell = inputValue.slice(2, 4);
                 thirdNumberCell = inputValue.slice(4);
-            }
         }
 
         let firstLetter = inputValue.slice(0, 1);
@@ -189,7 +187,9 @@ function checkInput() {
         switch (true) {
             case (firstLetter === 'm'):
                 cellName = 'Осн';
-                checkLengthNameCell();
+                if (cellNameLength === 5) {
+                    changeSecondAndThirdNumberCell();
+                }
                 renderSticker(cellName);
                 break;
             case (firstLetter === 'b'):
@@ -236,10 +236,10 @@ function checkInput() {
 
 }
 
-userInputEvents['submitCellName'].addEventListener('click', checkInput);
+userInputEvents['submitCellName'].addEventListener('click', renderStickerOrWarningError);
 userInputEvents['inputName'].addEventListener('keydown', (event) => {
     if (event.keyCode === 13) {
-        checkInput()
+        renderStickerOrWarningError();
     }
 });
 userInputEvents['print'].addEventListener('click', () => {
