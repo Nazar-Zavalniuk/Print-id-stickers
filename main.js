@@ -14,7 +14,7 @@ const arraysWithBarcodes = [];
 
 function fillArraysWithBarcodes() {
 
-    function createArrayWithBarcodes (stringWithBarcodes, arrayWithBarcodes) {
+    function createArrayWithBarcodes(stringWithBarcodes, arrayWithBarcodes) {
         let startIndex = 0;
         let endIndex = 8;
         let barcodeCell = stringWithBarcodes.slice(startIndex, endIndex);
@@ -44,7 +44,7 @@ const arraysWithCellNames = [];
 
 function fillArraysWithCellNames() {
 
-    function createArrayWithCellNames (rackName, startLength, startHeight, rackLength, rackHeight) {
+    function createArrayWithCellNames(rackName, startLength, startHeight, rackLength, rackHeight) {
         const cellNames = [];
 
         for (; startHeight <= rackHeight; startLength++) {
@@ -134,22 +134,22 @@ function fillSticker() {
 fillSticker();
 
 const userInputEvents = {
-    inputName: document.querySelector('.input-name'),
-    submitCellName: document.querySelector('.submitName'),
+    inputName: document.querySelector('.input__name'),
+    submitCellName: document.querySelector('.submit__name'),
     print: document.querySelector('.print')
 }
 
 const render = {
-    warningError: document.querySelector('#warning-error'),
+    warningError: document.querySelector('#warning__error'),
     warningHeading: document.createElement('h2'),
     warningParagraph: document.createElement('p'),
     textHeading: 'Ошибка!',
     textParagraph: 'Введено некоректное имя ячейки или же ячейка отсутствует в базе, попробуйте еще раз.',
-    cellName: document.querySelector('.name-cell'),
-    firstNumberCell: document.querySelector('.first-number-cell'),
-    secondNumberCell: document.querySelector('.second-number-cell'),
-    thirdNumberCell: document.querySelector('.third-number-cell'),
-    imgCode: document.querySelector('.img-code')
+    rackName: document.querySelector('.rack__name'),
+    rackNumber: document.querySelector('.rack__number'),
+    rackLength: document.querySelector('.rack__length'),
+    rackHeight: document.querySelector('.rack__height'),
+    imgCode: document.querySelector('.img__code')
 }
 
 userInputEvents['inputName'].focus();
@@ -160,45 +160,45 @@ function renderStickerOrWarningError() {
     let inputValue = userInputEvents['inputName'].value.toLowerCase();
 
     if (inputValue in sticker) {
-        let cellName;
-        let firstNumberCell = inputValue.slice(1, 2);
-        let secondNumberCell = inputValue.slice(2, 3);
-        let thirdNumberCell = inputValue.slice(3);
+        let rackName;
+        let rackNumber = inputValue.slice(1, 2);
+        let rackLength = inputValue.slice(2, 3);
+        let rackHeight = inputValue.slice(3);
         let imgCode = `https://barcode.tec-it.com/barcode.ashx?data=${sticker[inputValue]}&code=Code25IL`;
 
-        function renderSticker(cellName) {
-            render['cellName'].textContent = cellName;
-            render['firstNumberCell'].textContent = firstNumberCell;
-            render['secondNumberCell'].textContent = secondNumberCell;
-            render['thirdNumberCell'].textContent = thirdNumberCell;
+        function renderSticker(rackName) {
+            render['rackName'].textContent = rackName;
+            render['rackNumber'].textContent = rackNumber;
+            render['rackLength'].textContent = rackLength;
+            render['rackHeight'].textContent = rackHeight;
             render['imgCode'].src = imgCode;
             userInputEvents['inputName'].focus();
         }
 
         let cellNameLength = inputValue.length;
 
-        function changeSecondAndThirdNumberCell() {
-                secondNumberCell = inputValue.slice(2, 4);
-                thirdNumberCell = inputValue.slice(4);
+        function setNewLengthAndHeightValue() {
+            rackLength = inputValue.slice(2, 4);
+            rackHeight = inputValue.slice(4);
         }
 
         let firstLetter = inputValue.slice(0, 1);
 
         switch (true) {
             case (firstLetter === 'm'):
-                cellName = 'Осн';
+                rackName = 'Осн';
                 if (cellNameLength === 5) {
-                    changeSecondAndThirdNumberCell();
+                    setNewLengthAndHeightValue();
                 }
-                renderSticker(cellName);
+                renderSticker(rackName);
                 break;
             case (firstLetter === 'b'):
-                cellName = 'Ящ.';
-                renderSticker(cellName);
+                rackName = 'Ящ.';
+                renderSticker(rackName);
                 break;
             default:
-                cellName = 'Зал';
-                renderSticker(cellName);
+                rackName = 'Зал';
+                renderSticker(rackName);
         }
 
         function removeWarningError() {
@@ -211,7 +211,7 @@ function renderStickerOrWarningError() {
 
     } else {
         function showWarning() {
-            render['warningError'].setAttribute('class', 'warning-error');
+            render['warningError'].setAttribute('class', 'warning__error');
             render['warningError'].appendChild(render['warningHeading']);
             render['warningError'].appendChild(render['warningParagraph']);
             userInputEvents['inputName'].focus();
@@ -223,16 +223,12 @@ function renderStickerOrWarningError() {
             render['warningError'].style.transform = 'scale(1)';
         }
 
-        if (render['warningError'].getAttribute('class') === 'warning-error') {
+        if (render['warningError'].getAttribute('class') === 'warning__error') {
             render['warningError'].style.transform = 'scale(0.1)';
             render['warningError'].style.transition = 'none';
             window.setTimeout(scale, 150);
-        } else {
-            showWarning();
-            scale();
         }
     }
-
 
 }
 
