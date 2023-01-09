@@ -1,115 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Create sticker by Nazik</title>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/css/nulling-styles.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/media-queries.css">
     <script src="main.js" defer></script>
 </head>
+
 <body>
 
-<div class="page-wrapper">
-    <div class="page-container">
-        <div class="container-sticker">
-            <div class="body-sticker">
-                <div class="first-section">
-                    <img src="up-long.svg">
-                    <div class="name-cell">Осн</div>
-                </div>
-                <div class="second-section">
-                    <div class="first-number-cell">0</div>
-                </div>
-                <div class="third-section">
-                    <div class="number-section">
-                        <span class="second-number-cell">0</span>-<span class="third-number-cell">0</span>
+    <div class="wrapper">
+
+        <div class="content">
+            <div class="sticker">
+                <div class="sticker__body">
+                    <div class="sticker__row">
+                        <div class="sticker__column column__1">
+                            <img src="up-long.svg">
+                            <div class="rack__name">Осн</div>
+                        </div>
+                        <div class="sticker__column column__2">
+                            <div class="rack__number">0</div>
+                        </div>
+                        <div class="sticker__column column__3">
+                            <div class="rack__length__and__height">
+                                <span class="rack__length">0</span>
+                                -
+                                <span class="rack__height">0</span>
+                            </div>
+                            <img src="https://barcode.tec-it.com/barcode.ashx?data=30057579&code=Code25IL">
+                        </div>
                     </div>
-                    <div class="code-section">
-                        <img class="img-code" src="https://barcode.tec-it.com/barcode.ashx?data=30057579&code=Code25IL">
+                    <div class="handling__user__input__row">
+                        <div class="form__input__cell">
+                            <label for="input__name">Введите ячейку: </label>
+                            <input id="input__name" class="input__name" type="text">
+                        </div>
+                        <div class="buttons__render__sticker__or__pdf">
+                            <button class="print">Печать</button>
+                            <input type="submit" value="Создать стикер" class="submit__Name">
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <div class="data-processing-container">
-                <div class="form-input-cell">
-                    <label for="input-name">Введите ячейку: </label>
-                    <input id="input-name" class="input-name" type="text">
+            <div class="error">
+                <div class="container">
+                    <div class="warning__error__row">
+                        <div id="warning__error"></div>
+                    </div>
                 </div>
-                <div class="buttons-render-sticker-or-pdf">
-                    <button class="print">Печать</button>
-                    <input type="submit" value="Создать стикер" class="submitName">
+            </div>
+            <div class="tutorial">
+                <div class="container">
+                    <div class="tutorial__row">
+                        <div class="tutorial__rules item">
+                            <div class="tutorial__rules__row box">
+                                <h1 class="title">Правила пользования:</h1>
+                                <p>Для получения стикера ячейки "Осн" следует ввести букву "m" перед адресом самой
+                                    ячейки.
+                                </p>
+                                <p>Пример ввода для получения ячейки "Осн" <span class="input__example">"Осн 2-1-1":
+                                        m211;</span></p>
+                                <p>Для получения стикера ячейки "Ящ." следует ввести букву "b" перед адресом самой
+                                    ячейки.
+                                </p>
+                                <p>Пример ввода для получения ячейки "Ящ." <span class="input__example">"Ящ. 1-1-1":
+                                        b111;</span></p>
+                                <p>Для получения стикера ячейки "Зал" следует ввести букву "h" перед адресом самой
+                                    ячейки.
+                                </p>
+                                <p>Пример ввода для получения ячейки "Зал" <span class="input__example">"Зал 1-1-2":
+                                        h112;</span></p>
+                            </div>
+                        </div>
+                        <div class="tutorial__warning item">
+                            <div class="tutorial__warning__row box">
+                                <h1 class="title">Предупреждение!</h1>
+                                <p>В данный момент осутствует информация по таким ячейкам:</p>
+                                <ul>
+                                    <li>
+                                        Все ячейки основного стелажа №1 ("Осн 1"), такие как:
+                                        <span class="input__example">"Осн 1-1-1"</span>,
+                                        <span class="input__example">"Осн 1-1-2"</span>,
+                                        <span class="input__example">"Осн 1-1-3"</span> и т.д.
+                                    </li>
+                                    <li>
+                                        Ячейка <span class="input__example">"Ящ. 1-1-17"</span>,
+                                        <span class="input__example">"Ящ. 1-1-19"</span>,
+                                        <span class="input__example">"Ящ.1-1-20"</span> и дальше по нарастающей...
+                                    </li>
+                                    <li>
+                                        Ячейка <span class="input__example">"Зал 1-1-1"</span>
+                                    </li>
+                                </ul>
+                                <p>Следовательно создать для них стикер невозможно!!!</p>
+                            </div>
+                        </div>
+                        <div class="tutorial__good__example item">
+                            <div class="tutorial__good__example__row box example">
+                                <h2 class="sub__title">Пример хорошего ввода:</h2>
+                                <ul>
+                                    <li>
+                                        Хотим получить стикер с адоресом <span class="input__example">"Ящ.
+                                            1-1-9"</span>,
+                                        <span class="input__example">вводим: b119;</span>
+                                    </li>
+                                    <li>
+                                        Хотим получить стикер с адоресом <span class="input__example">"Зал
+                                            1-1-3"</span>,
+                                        <span class="input__example">вводим: h113;</span>
+                                    </li>
+                                    <li>
+                                        Хотим получить стикер с адоресом <span class="input__example">"Осн
+                                            9-4-1"</span>,
+                                        <span class="input__example">вводим: m941;</span>
+                                    </li>
+                                    <li>
+                                        Хотим получить стикер с адоресом <span class="input__example">"Осн
+                                            2-2-1"</span>,
+                                        <span class="input__example">вводим: m221;</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="tutorial__bad__example item">
+                            <div class="tutorial__bad__example__row box example">
+                                <h2 class="sub__title">Пример плохого ввода:</h2>
+                                <ul>
+                                    <li>
+                                        Хотим получить стикер с адоресом <span class="input__example">"Ящ.
+                                            1-1-1"</span>,
+                                        <span class="input__example">вводим: b1-1-1;</span>
+                                    </li>
+                                    <li>
+                                        Хотим получить стикер с адоресом <span class="input__example">"Осн
+                                            2-1-1"</span>,
+                                        <span class="input__example">вводим: 2-1-1;</span>
+                                    </li>
+                                    <li>
+                                        Хотим получить стикер с адоресом <span class="input__example">"Ящ.
+                                            1-1-1"</span>,
+                                        <span class="input__example">вводим: 111;</span>
+                                    </li>
+                                    <li>
+                                        Хотим получить стикер с адоресом <span class="input__example">"Осн
+                                            2-1-1"</span>,
+                                        <span class="input__example">вводим: 211;</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-
-        <div class="text-content-wrapper">
-            <div class="text-content-container">
-                <div  id="warning-error"></div>
-                <div class="flex-grid">
-                    <div class="box-rules">
-                        <h1>Правила пользования:</h1>
-                        <div class="rules">
-                            <p>Для получения стикера ячейки "Осн" следует ввести букву "m" перед адресом самой ячейки.</p>
-                            <p>Пример ввода для получения ячейки "Осн" "Осн 2-1-1": m211;</p>
-                            <p>Для получения стикера ячейки "Ящ." следует ввести букву "b" перед адресом самой ячейки.</p>
-                            <p>Пример ввода для получения ячейки "Ящ." "Ящ. 1-1-1": b111;</p>
-                            <p>Для получения стикера ячейки "Зал" следует ввести букву "h" перед адресом самой ячейки.</p>
-                            <p>Пример ввода для получения ячейки "Зал" "Зал 1-1-2": h112;</p>
-                            <p class="note">
-                                Примечание: при открытии окна печати, в настройках печати следует
-                                выбрать только первую странницу, также следует установить значение маштаба на "166"!
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="box-warning">
-                        <h1>Предупреждение!</h1>
-                        <div class="warning">
-                            <p>В данный момент осутствует информация по таким ячейкам:</p>
-                            <ul>
-                                <li>Все ячейки основного стелажа №1 ("Осн 1"), такие как: "Осн 1-1-1", "Осн 1-1-2", "Осн 1-1-3" и т.д.</li>
-                                <li>Ячейка "Ящ. 1-1-17", "Ящ. 1-1-19", "Ящ. 1-1-20" и дальше по нарастающей...</li>
-                                <li>Ячейка "Зал 1-1-1"</li>
-                            </ul>
-                        </div>
-                        <p class="emphasis-warning">Следовательно создать для них стикер невозможно!!!</p>
-                    </div>
-
-                    <div class="box-good-example">
-                        <h2>Пример хорошего ввода:</h2>
-                        <div class="good-example">
-                            <ul>
-                                <li>Хотим получить стикер с адоресом "Ящ. 1-1-9", вводим: b119;</li>
-                                <li>Хотим получить стикер с адоресом "Зал 1-1-3", вводим: h113;</li>
-                                <li>Хотим получить стикер с адоресом "Осн 9-4-1", вводим: m941;</li>
-                                <li>Хотим получить стикер с адоресом "Осн 2-2-1", вводим: m221;</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="box-bad-example">
-                        <h2>Пример плохого ввода:</h2>
-                        <div class="bad-example">
-                            <ul>
-                                <li>Хотим получить стикер с адоресом "Ящ. 1-1-1", вводим: b1-1-1;</li>
-                                <li>Хотим получить стикер с адоресом "Осн 2-1-1", вводим: 2-1-1;</li>
-                                <li>Хотим получить стикер с адоресом "Ящ. 1-1-1", вводим: 111;</li>
-                                <li>Хотим получить стикер с адоресом "Осн 2-1-1", вводим: 211;</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <address>
-                    <p>
+        <footer class="footer">
+            <div class="container">
+                <div class="footer__row">
+                    <div class="footer__text">
                         Связь с автором:<br>
                         Email: <b>nazarzaval99@gmail.com</b>
-                    </p>
-                </address>
+                    </div>
+                </div>
             </div>
-        </div>
+        </footer>
+
     </div>
-</div>
 
 </body>
+
 </html>

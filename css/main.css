@@ -1,0 +1,241 @@
+body {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: calc(1.2rem + (2 + 2 * 0.7) * ((100vw - 32rem) / 1400));
+}
+
+.wrapper {
+    min-height: 100%;
+    overflow: hidden;
+
+    display: flex;
+    flex-flow: column;
+}
+
+.content {
+    flex: 1 1 auto;
+}
+
+.sticker__body {
+    max-width: 37.5rem;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.sticker__row {
+    border: 0.1rem solid black;
+    display: flex;
+    padding: 1rem;
+    max-width: 35.5rem;
+}
+
+.sticker__column {
+    flex: 1 1 33.333%;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.column__1 img {
+    height: 20vw;
+    max-height: 8.4rem;
+}
+
+.column__2 {
+    margin: 0 1rem;
+    border: 0.4rem solid black;
+}
+
+.rack__length__and__height {
+    display: flex;
+    justify-content: center;
+    height: 50%;
+    font-weight: bold;
+}
+
+.column__3 img {
+    height: 50%;
+    max-width: 100%;
+}
+
+.rack__name {
+    font-size: calc(9vw + 0.011rem);
+    font-weight: bold;
+}
+
+.rack__number {
+    font-size: calc(28vw + 0.012rem);
+    font-weight: bold;
+}
+
+.rack__length__and__height,
+.rack__length,
+.rack__height {
+    font-size: calc(13vw + 0.027rem);
+}
+
+.form__input__cell,
+.print,
+.submitName {
+    font-size: 1.4rem;
+}
+
+.form__input__cell {
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+label {
+    flex: 1 0 40%;
+}
+
+.input__name {
+    width: 60%;
+}
+
+.buttons__render__sticker__or__pdf {
+    display: flex;
+    justify-content: space-between;
+    min-height: 2.2rem;
+}
+
+.print,
+.submit__Name {
+    padding: 0.1rem 0.6rem;
+    cursor: pointer;
+}
+
+.print:active,
+.submit__Name:active {
+    background-color: rgb(4 170 109);
+    border: rgb(4 170 109);
+    border-radius: 0.3rem;
+    color: rgb(245 245 245);
+}
+
+.print {
+    min-width: 6.227rem;
+}
+
+.submit__Name {
+    min-width: 11.214rem;
+}
+
+.warning__error__row {
+    display: flex;
+    justify-content: center;
+}
+
+.warning__error {
+    text-align: center;
+    padding: 1rem;
+    border: 0.1rem solid black;
+    margin: 0 1rem;
+    line-height: 1.3;
+    box-shadow: 0.3rem 0.3rem 0.3rem rgba(43, 42, 51, .5);
+}
+
+.warning__error h2 {
+    font-size: calc(1.8rem + (2 + 2 * 0.7) * ((100vw - 32rem) / 1400));
+    font-weight: bold;
+}
+
+.warning__error p {
+    text-shadow: 0 0 black;
+}
+
+.tutorial__row {
+    margin: 1rem;
+}
+
+.item {
+    margin-bottom: 1rem;
+}
+
+.box {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    padding: 1rem;
+    min-height: 100%;
+    text-align: center;
+    line-height: 1.3;
+    border: 0.1rem solid black;
+    box-shadow: 0.3rem 0.3rem 0.3rem rgba(43, 42, 51, .5);
+}
+
+.input__example {
+    display: inline-block;
+}
+
+.box p,
+.box li {
+    text-shadow: 0 0 black;
+    padding: 0.4rem;
+}
+
+.title,
+.sub__title {
+    font-weight: bold;
+    margin-bottom: 0.8rem;
+}
+
+.title {
+    font-size: calc(2rem + (2 + 2 * 0.7) * ((100vw - 32rem) / 1400));
+}
+
+.sub__title {
+    font-size: calc(1.8rem + (2 + 2 * 0.7) * ((100vw - 32rem) / 1400));
+}
+
+.tutorial__warning li {
+    text-align: justify;
+}
+
+.tutorial__warning p {
+    font-weight: 500;
+}
+
+.tutorial__warning p:last-child {
+    font-size: calc(1.4rem + (2 + 2 * 0.7) * ((100vw - 32rem) / 1400));
+}
+
+.tutorial__rules .box {
+    background-color: rgb(33 150 243);
+}
+
+.tutorial__rules .box p:nth-child(even) {
+    background-color: rgb(63 81 181 / 50%);
+}
+
+.warning__error,
+.tutorial__warning .box,
+.tutorial__bad__example .box {
+    background-color: rgb(255 0 87);
+}
+
+.tutorial__good__example .box {
+    background-color: rgb(50 205 50);
+}
+
+.container {
+    max-width: 768px;
+    margin: 0 auto;
+}
+
+.footer {
+    background-color: #f5f5f5;
+}
+
+.footer__row {
+    display: flex;
+    height: 5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer__text {
+    text-align: center;
+    line-height: 1.3;
+}
