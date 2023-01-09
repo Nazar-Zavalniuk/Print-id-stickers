@@ -94,6 +94,11 @@ label {
     width: 60%;
 }
 
+.input__name:focus {
+    border: 0.2rem solid black;
+    border-radius: 0.3rem;
+}
+
 .buttons__render__sticker__or__pdf {
     display: flex;
     justify-content: space-between;
@@ -101,13 +106,13 @@ label {
 }
 
 .print,
-.submit__Name {
+.submit__name {
     padding: 0.1rem 0.6rem;
     cursor: pointer;
 }
 
 .print:active,
-.submit__Name:active {
+.submit__name:active {
     background-color: rgb(4 170 109);
     border: rgb(4 170 109);
     border-radius: 0.3rem;
@@ -118,7 +123,7 @@ label {
     min-width: 6.227rem;
 }
 
-.submit__Name {
+.submit__name {
     min-width: 11.214rem;
 }
 
