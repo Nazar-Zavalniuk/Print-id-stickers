@@ -14,10 +14,11 @@ const arraysWithBarcodes = [];
 
 function fillArraysWithBarcodes() {
 
-    function createArrayWithBarcodes(stringWithBarcodes, arrayWithBarcodes) {
+    function createArrayWithBarcodes(stringWithBarcodes) {
         let startIndex = 0;
         let endIndex = 8;
         let barcodeCell = stringWithBarcodes.slice(startIndex, endIndex);
+        let arrayWithBarcodes = [];
 
         while (barcodeCell !== '') {
             arrayWithBarcodes.push(barcodeCell);
@@ -25,13 +26,14 @@ function fillArraysWithBarcodes() {
             endIndex += 8;
             barcodeCell = stringWithBarcodes.slice(startIndex, endIndex);
         }
+
+        return arrayWithBarcodes;
     }
 
     for (let prop in barcodesString) {
         let stringWithBarcodes = barcodesString[prop];
-        const arrayWithBarcodes = [];
+        let arrayWithBarcodes = createArrayWithBarcodes(stringWithBarcodes);
 
-        createArrayWithBarcodes(stringWithBarcodes, arrayWithBarcodes);
         arraysWithBarcodes.push(arrayWithBarcodes);
     }
 
