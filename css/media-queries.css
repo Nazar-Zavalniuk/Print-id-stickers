@@ -92,6 +92,13 @@
         flex: 1 1 auto;
     }
 
+    /* Formula for calculating font size 
+    
+    addSize = pcSize - mobSize;
+    
+    Final formula for font size on PC: calc(mobSize + addSize (100vw / maxWidth));
+    */
+
     body {
         font-size: calc(1.2rem + 2 * (100vw / 1400));
     }
