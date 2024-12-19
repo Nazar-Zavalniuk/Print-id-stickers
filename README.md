@@ -31,7 +31,9 @@
 
 <p>This application was created during my time as a storekeeper in a mall to streamline and accelerate everyday tasks. As a beginner in web application development, I applied my newly acquired skills to analyze the workflow, identify key requirements for printing id stickers, and design a user-friendly interface. I also developed clear instructions to ensure that my colleagues could easily use the tool.</p>
 
-<p>By implementing this project, I improved the efficiency of my team’s work while enhancing my own understanding of web technologies, including JavaScript, CSS, and HTML. Additionally, deploying the application via GitHub Pages provided valuable experience in project deployment and collaborative problem-solving.</p>
+<p>By implementing this project, I improved the efficiency of my team’s work while enhancing my own understanding of web technologies, including <strong>JavaScript</strong>, <strong>CSS</strong>, and <strong>HTML</strong>. Additionally, deploying the application via <strong>GitHub Pages</strong> provided valuable experience in project deployment and collaborative problem-solving.</p>
 <br/>
 
-<p align="right"><em>Author <a href="https://github.com/Nazar-Zavalniuk">Nazar Zavalniuk</a></em> </p>
+<p align="right">
+<em>Author <a href="https://github.com/Nazar-Zavalniuk">Nazar Zavalniuk</a></em>
+</p>
